@@ -28,13 +28,11 @@ WORKDIR /app
 COPY . .
 
 RUN npm install --legacy-peer-deps
-
 RUN npm install ws
-
 RUN npm run build
 
-
+ENV MEDPLUM_CONFIG=/app/medplum_config.json
 
 EXPOSE 3000
 
-CMD ["node","packages/server/start.js"]
+CMD ["node","-r","ws","packages/server/dist/index.js"]
