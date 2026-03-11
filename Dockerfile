@@ -29,9 +29,12 @@ COPY . .
 
 RUN npm install --legacy-peer-deps
 
-# Build all workspaces (core, definitions, server, etc.)
+# install websocket dependency
+RUN npm install ws
+
+# build all workspaces (this worked for you before)
 RUN npm run build
 
 EXPOSE 8103
 
-CMD ["npm", "run", "start", "--workspace=@medplum/server"]
+CMD ["npm","run","start","--workspace=@medplum/server"]
