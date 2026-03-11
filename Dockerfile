@@ -37,4 +37,4 @@ RUN npm run build
 
 EXPOSE 8103
 
-CMD ["npm","run","start","--workspace=@medplum/server"]
+CMD ["node","-r","ws","packages/server/dist/index.js"]
