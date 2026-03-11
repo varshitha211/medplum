@@ -1,6 +1,6 @@
 {
     "baseUrl": "https://medplum-production-dff0.up.railway.app",
-    "port": "${PORT}",
+    "port": 3000,
     "database": {
       "type": "postgresql",
       "url": "${DATABASE_URL}"
