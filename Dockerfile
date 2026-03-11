@@ -29,7 +29,8 @@ COPY . .
 
 RUN npm install --legacy-peer-deps
 
-RUN npm run build --workspace=@medplum/server
+# Build all workspaces (core, definitions, server, etc.)
+RUN npm run build
 
 EXPOSE 8103
 
