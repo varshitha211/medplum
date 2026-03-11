@@ -21,7 +21,7 @@
 # https://github.com/docker-library/official-images#architectures-other-than-amd64
 
 # Stage 1: Build the application and install production dependencies
-FROM node:18
+FROM node:20
 
 WORKDIR /app
 
@@ -29,8 +29,10 @@ COPY . .
 
 RUN npm install --legacy-peer-deps
 
+RUN npm install ws
+
 RUN npm run build
 
 EXPOSE 8103
 
-CMD ["npm","run","start"]
+CMD ["node","-r","ws","packages/server/dist/index.js"]
