@@ -33,8 +33,8 @@ RUN npm install ws
 
 RUN npm run build
 
-ENV PORT=8103
 
-EXPOSE 8103
+
+EXPOSE 3000
 
 CMD ["node","packages/server/start.js"]
