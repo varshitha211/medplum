@@ -21,7 +21,7 @@
 # https://github.com/docker-library/official-images#architectures-other-than-amd64
 
 # Stage 1: Build the application and install production dependencies
-FROM node:20
+FROM node:18
 
 WORKDIR /app
 
@@ -29,12 +29,8 @@ COPY . .
 
 RUN npm install --legacy-peer-deps
 
-# install websocket dependency
-RUN npm install ws
-
-# build all workspaces (this worked for you before)
 RUN npm run build
 
 EXPOSE 8103
 
-CMD ["node","-r","ws","packages/server/dist/index.js"]
+CMD ["npm","run","start"]
