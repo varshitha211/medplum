@@ -35,4 +35,4 @@ RUN npm run build
 
 EXPOSE 8103
 
-CMD ["node","-r","ws","packages/server/dist/index.js"]
+CMD ["node","packages/server/start.js"]
