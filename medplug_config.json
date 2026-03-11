@@ -1,0 +1,12 @@
+{
+    "baseUrl": "https://medplum-production-dff0.up.railway.app",
+    "port": 8103,
+    "database": {
+      "type": "postgresql",
+      "url": "${DATABASE_URL}"
+    },
+    "redis": {
+      "url": ""
+    },
+    "logLevel": "info"
+  }
