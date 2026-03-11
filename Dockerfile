@@ -21,20 +21,16 @@
 # https://github.com/docker-library/official-images#architectures-other-than-amd64
 
 # Stage 1: Build the application and install production dependencies
-FROM node:20 AS build-stage
-ENV NODE_ENV=production
-WORKDIR /usr/src/medplum
-ADD ./medplum-server-metadata.tar.gz ./
-RUN npm ci --omit=dev && \
-  rm package-lock.json
+FROM node:20
 
-# Stage 2: Create the runtime image
-FROM node:20 AS runtime-stage
-ENV NODE_ENV=production
-WORKDIR /usr/src/medplum
-COPY --from=build-stage /usr/src/medplum/ ./
-ADD ./medplum-server-runtime.tar.gz ./
+WORKDIR /app
 
-EXPOSE 5000 8103
+COPY . .
 
-ENTRYPOINT [ "node", "--require", "./packages/server/dist/otel/instrumentation.js", "packages/server/dist/index.js" ]
+RUN npm install --legacy-peer-deps
+
+RUN npm run build --workspace=@medplum/server
+
+EXPOSE 8103
+
+CMD ["npm", "run", "start", "--workspace=@medplum/server"]
