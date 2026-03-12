@@ -1,11 +1,19 @@
 {
   "port": "${PORT}",
   "baseUrl": "https://medplum-production-dff0.up.railway.app",
-  "binaryStorage": "file:./binary/",
+  "binaryStorage": "file:/app/binary/",
   "storageBaseUrl": "https://medplum-production-dff0.up.railway.app/storage/",
   "allowedOrigins": "*",
   "introspectionEnabled": true,
-  "databaseUrl": "${DATABASE_URL}",
+  "database": {
+    "type": "postgres",
+    "host": "${PGHOST}",
+    "port": "${PGPORT}",
+    "database": "${PGDATABASE}",
+    "username": "${PGUSER}",
+    "password": "${PGPASSWORD}",
+    "ssl": true
+  },
   "redis": {
     "url": "${REDIS_URL}"
   },
