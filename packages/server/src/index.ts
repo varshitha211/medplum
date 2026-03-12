@@ -1,8 +1,5 @@
 // SPDX-FileCopyrightText: Copyright Orangebot, Inc. and Medplum contributors
 // SPDX-License-Identifier: Apache-2.0
-import WebSocket from "ws";
-
-(globalThis as any).WebSocket = WebSocket;
 import express from 'express';
 import gracefulShutdown from 'http-graceful-shutdown';
 import { initApp, shutdownApp } from './app';
