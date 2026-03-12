@@ -10,4 +10,4 @@ RUN npm run build
 
 EXPOSE 3000
 
-CMD ["node","packages/server/start.js"]
+CMD ["node","--require","ws","packages/server/dist/index.js"]
