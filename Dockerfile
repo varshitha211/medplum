@@ -1,15 +1,21 @@
 FROM node:22
 
-ENV NODE_ENV=production
-
 WORKDIR /app
 
+# Copy project
 COPY . .
 
-RUN npm install -g turbo
+# Install ALL dependencies (including dev)
 RUN npm install --legacy-peer-deps
-RUN npm run build
 
+# Install turbo globally
+RUN npm install -g turbo rimraf
+
+# Build project
+RUN npx turbo run build --filter=@medplum/server
+
+# Expose port
 EXPOSE 3000
 
+# Start server
 CMD ["node","--require","./packages/server/dist/otel/instrumentation.js","packages/server/dist/index.js","--config","/app/medplum.config.json"]
