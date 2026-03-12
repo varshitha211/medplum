@@ -40,11 +40,11 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/core": "3.9.2",
+    "@docusaurus/core": "^3.5.2",
     "@docusaurus/faster": "3.9.2",
     "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/preset-classic": "3.9.2",
-    "@docusaurus/theme-mermaid": "3.9.2",
+    "@docusaurus/preset-classic": "^3.5.2",
+    "@docusaurus/theme-mermaid": "^3.5.2",
     "@docusaurus/tsconfig": "3.9.2",
     "@docusaurus/types": "3.9.2",
     "@mdx-js/react": "3.1.1",
@@ -68,5 +68,12 @@
   },
   "engines": {
     "node": "^22.18.0 || >=24.2.0"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "5.18.3",
+    "@microsoft/api-extractor": "7.57.7",
+    "aws-cdk-lib": "2.243.0",
+    "fsh-sushi": "3.18.1",
+    "tar": "7.5.11"
   }
 }
