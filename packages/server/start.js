@@ -1,11 +1,12 @@
-global.WebSocket = require("ws");
+import WebSocket from "ws";
+import { execSync } from "child_process";
+
+globalThis.WebSocket = WebSocket;
 
 process.env.MEDPLUM_CONFIG = "/app/medplum_config.json";
-
-const { execSync } = require("child_process");
 
 // Run database migrations
 execSync("node packages/server/dist/migrate.js", { stdio: "inherit" });
 
 // Start Medplum server
-require("./packages/server/dist/index.js");
+await import("./packages/server/dist/index.js");
