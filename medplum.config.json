@@ -6,7 +6,7 @@
   "allowedOrigins": "*",
   "introspectionEnabled": true,
   "database": {
-    "type": "postgresql",
+    "type": "postgres",
     "url": "${DATABASE_URL}"
   },
   "redis": {
