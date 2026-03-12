@@ -4,4 +4,4 @@ globalThis.WebSocket = WebSocket;
 
 process.env.MEDPLUM_CONFIG = "/app/medplum_config.json";
 
-await import("./packages/server/dist/index.js");
+await import("./dist/index.js");
