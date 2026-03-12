@@ -5,10 +5,7 @@
   "storageBaseUrl": "https://medplum-production-dff0.up.railway.app/storage/",
   "allowedOrigins": "*",
   "introspectionEnabled": true,
-  "database": {
-    "type": "postgres",
-    "url": "${DATABASE_URL}"
-  },
+  "databaseUrl": "${DATABASE_URL}",
   "redis": {
     "url": "${REDIS_URL}"
   },
