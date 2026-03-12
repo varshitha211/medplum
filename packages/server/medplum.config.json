@@ -1,34 +1,17 @@
 {
-  "port": 8103,
-  "baseUrl": "http://localhost:8103/",
-  "appBaseUrl": "http://localhost:3000/",
+  "port": "${PORT}",
+  "baseUrl": "https://medplum-production-dff0.up.railway.app",
   "binaryStorage": "file:./binary/",
-  "storageBaseUrl": "http://localhost:8103/storage/",
+  "storageBaseUrl": "https://medplum-production-dff0.up.railway.app/storage/",
   "supportEmail": "\"Medplum\" <support@medplum.com>",
-  "googleClientId": "397236612778-c0b5tnjv98frbo1tfuuha5vkme3cmq4s.apps.googleusercontent.com",
-  "googleClientSecret": "",
-  "recaptchaSiteKey": "6LfHdsYdAAAAAC0uLnnRrDrhcXnziiUwKd8VtLNq",
-  "recaptchaSecretKey": "6LfHdsYdAAAAAH9dN154jbJ3zpQife3xaiTvPChL",
-  "adminClientId": "2a4b77f2-4d4e-43c6-9b01-330eb5ca772f",
-  "maxJsonSize": "1mb",
-  "maxBatchSize": "50mb",
-  "botLambdaRoleArn": "",
-  "botLambdaLayerName": "medplum-bot-layer",
-  "vmContextBotsEnabled": true,
-  "defaultBotRuntimeVersion": "vmcontext",
   "allowedOrigins": "*",
   "introspectionEnabled": true,
   "database": {
-    "host": "localhost",
-    "port": 5432,
-    "dbname": "medplum",
-    "username": "medplum",
-    "password": "medplum"
+    "type": "postgresql",
+    "url": "${DATABASE_URL}"
   },
   "redis": {
-    "host": "localhost",
-    "port": 6379,
-    "password": "medplum"
+    "url": "${REDIS_URL}"
   },
   "bullmq": {
     "removeOnFail": { "count": 1 },
