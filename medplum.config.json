@@ -1,6 +1,10 @@
 {
+  "port": "${PORT}",
   "baseUrl": "https://medplum-production-dff0.up.railway.app",
-  "port": 3000,
+  "binaryStorage": "file:./binary/",
+  "storageBaseUrl": "https://medplum-production-dff0.up.railway.app/storage/",
+  "allowedOrigins": "*",
+  "introspectionEnabled": true,
   "database": {
     "type": "postgresql",
     "url": "${DATABASE_URL}"
