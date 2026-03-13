@@ -18,12 +18,5 @@
     }
   },
 
-  "redis": {
-    "url": "redis://default:lZZCskdRplTNzbcdQZvuCWoGWlskMHXk@redis.railway.internal:6379",
-    "tls": {
-      "rejectUnauthorized": false
-    }
-  },
-
   "logLevel": "info"
 }
