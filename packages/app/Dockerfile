@@ -1,3 +1,15 @@
+FROM node:22 AS builder
+
+WORKDIR /app
+COPY . .
+
+RUN npm install --legacy-peer-deps
+RUN npm install -g turbo rimraf
+
+# Build only the Medplum UI
+RUN npx turbo run build --filter=@medplum/app
+
+
 FROM nginxinc/nginx-unprivileged:alpine
 
 USER root
@@ -23,7 +35,8 @@ server {
 }
 EOF
 
-ADD ./medplum-app.tar.gz /usr/share/nginx/html
+# Copy built UI
+COPY --from=builder /app/packages/app/dist /usr/share/nginx/html
 
 RUN chown -R 101:101 /usr/share/nginx/html
 
@@ -31,4 +44,4 @@ EXPOSE 3000
 
 USER 101
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx","-g","daemon off;"]
