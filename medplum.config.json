@@ -8,14 +8,17 @@
   "introspectionEnabled": true,
 
   "database": {
-    "type": "postgres",
-    "url": "${DATABASE_URL}"
+    "host": "${PGHOST}",
+    "port": "${PGPORT}",
+    "dbname": "${PGDATABASE}",
+    "username": "${PGUSER}",
+    "password": "${PGPASSWORD}",
+    "ssl": true
   },
 
   "redis": {
     "url": "${REDIS_URL}"
   },
 
-  "logLevel": "info",
-  "shutdownTimeoutMilliseconds": 30000
+  "logLevel": "info"
 }
