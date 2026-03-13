@@ -1,14 +1,12 @@
 FROM node:22
 
 WORKDIR /app
-
 COPY . .
 
 RUN npm install --legacy-peer-deps
 RUN npm install -g turbo rimraf
-
 RUN npx turbo run build --filter=@medplum/server
 
-EXPOSE 3000
-
-CMD ["node","--require","./packages/server/dist/otel/instrumentation.js","packages/server/dist/index.js"]
+# DEBUG
+RUN ls -R /app
+CMD ["sh","-c","echo MEDPLUM_CONFIG=$MEDPLUM_CONFIG && echo DATABASE_URL=$DATABASE_URL && node packages/server/dist/index.js"]
