@@ -18,6 +18,9 @@
     }
   },
 
-  "redis": null,
+  "redis": {
+    "url": "${REDIS_URL}"
+  },
+
   "logLevel": "info"
 }
