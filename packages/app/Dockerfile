@@ -9,7 +9,7 @@ ENV VITE_MEDPLUM_BASE_URL=$VITE_MEDPLUM_BASE_URL
 RUN npm install --legacy-peer-deps
 RUN npm install -g turbo rimraf
 
-RUN npx turbo run build --filter=@medplum/app
+RUN VITE_MEDPLUM_BASE_URL=$VITE_MEDPLUM_BASE_URL npx turbo run build --filter=@medplum/app
 
 
 FROM nginxinc/nginx-unprivileged:alpine
