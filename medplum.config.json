@@ -8,9 +8,9 @@
   "introspectionEnabled": true,
 
   "database": {
-    "type": "postgresql",
-    "url": "${DATABASE_URL}"
-  },
+  "type": "postgresql",
+  "url": ""
+},
 
   "redis": {
     "url": "${REDIS_URL}"
