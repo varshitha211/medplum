@@ -18,4 +18,4 @@ RUN npx turbo run build --filter=@medplum/server
 EXPOSE 3000
 
 # Start server
-CMD ["node","--require","./packages/server/dist/otel/instrumentation.js","packages/server/dist/index.js","--config","/app/medplum.config.json"]
+CMD ["node","--require","./packages/server/dist/otel/instrumentation.js","packages/server/dist/index.js","--config","/app/medplum/medplum.config.json"]
