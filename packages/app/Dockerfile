@@ -3,10 +3,12 @@ FROM node:22 AS builder
 WORKDIR /app
 COPY . .
 
+ARG VITE_MEDPLUM_BASE_URL
+ENV VITE_MEDPLUM_BASE_URL=$VITE_MEDPLUM_BASE_URL
+
 RUN npm install --legacy-peer-deps
 RUN npm install -g turbo rimraf
 
-# Build only the Medplum UI
 RUN npx turbo run build --filter=@medplum/app
 
 
@@ -35,7 +37,6 @@ server {
 }
 EOF
 
-# Copy built UI
 COPY --from=builder /app/packages/app/dist /usr/share/nginx/html
 
 RUN chown -R 101:101 /usr/share/nginx/html
