@@ -19,7 +19,7 @@
   },
 
   "redis": {
-    "url": "${REDIS_URL}"
+    "url": "redis://default:lZZCskdRplTNzbcdQZvuCWoGWlskMHXk@redis.railway.internal:6379"
   },
 
   "logLevel": "info"
