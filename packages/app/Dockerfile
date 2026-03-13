@@ -3,13 +3,12 @@ FROM node:22 AS builder
 WORKDIR /app
 COPY . .
 
-ARG VITE_MEDPLUM_BASE_URL
-ENV VITE_MEDPLUM_BASE_URL=$VITE_MEDPLUM_BASE_URL
+ENV VITE_MEDPLUM_BASE_URL=https://medplum-production-af1b.up.railway.app
 
 RUN npm install --legacy-peer-deps
 RUN npm install -g turbo rimraf
 
-RUN VITE_MEDPLUM_BASE_URL=$VITE_MEDPLUM_BASE_URL npx turbo run build --filter=@medplum/app
+RUN npx turbo run build --filter=@medplum/app
 
 
 FROM nginxinc/nginx-unprivileged:alpine
