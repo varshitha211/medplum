@@ -19,7 +19,10 @@
   },
 
   "redis": {
-    "url": "redis://default:lZZCskdRplTNzbcdQZvuCWoGWlskMHXk@redis.railway.internal:6379"
+    "host": "redis.railway.internal",
+    "port": 6379,
+    "username": "default",
+    "password": "lZZCskdRplTNzbcdQZvuCWoGWlskMHXk"
   },
 
   "logLevel": "info"
