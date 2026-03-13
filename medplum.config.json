@@ -7,14 +7,14 @@
   "allowedOrigins": "*",
   "introspectionEnabled": true,
 
-  "database": {
-    "host": "${PGHOST}",
-    "port": 5432,
-    "dbname": "${PGDATABASE}",
-    "username": "${PGUSER}",
-    "password": "${PGPASSWORD}",
-    "ssl": true
-  },
+"database": {
+  "host": "postgres.railway.internal",
+  "port": 5432,
+  "dbname": "railway",
+  "username": "postgres",
+  "password": "KDvAwQmVItHWUhouSUqBnKZuUjKasWbt",
+  "ssl": true
+},
 
   "redis": {
     "url": "${REDIS_URL}"
