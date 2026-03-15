@@ -6,23 +6,5 @@
   "storageBaseUrl": "https://medplum-production-4101.up.railway.app/storage/",
   "allowedOrigins": "*",
   "introspectionEnabled": true,
-
-  "database": {
-    "host": "postgres.railway.internal",
-    "port": 5432,
-    "dbname": "railway",
-    "username": "postgres",
-    "password": "PASTE_REAL_POSTGRES_PASSWORD",
-    "ssl": {
-      "rejectUnauthorized": false
-    }
-  },
-
-  "redis": {
-    "host": "redis.railway.internal",
-    "port": 6379,
-    "password": "PASTE_REAL_REDIS_PASSWORD"
-  },
-
   "logLevel": "info"
 }
