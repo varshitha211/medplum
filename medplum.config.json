@@ -1,9 +1,9 @@
 {
   "port": 3000,
-  "baseUrl": "https://medplum-production-af1b.up.railway.app",
+  "baseUrl": "https://medplum-production-4101.up.railway.app",
   "appBaseUrl": "https://valiant-joy-production-8f95.up.railway.app",
   "binaryStorage": "file:/app/binary/",
-  "storageBaseUrl": "https://medplum-production-af1b.up.railway.app/storage/",
+  "storageBaseUrl": "https://medplum-production-4101.up.railway.app/storage/",
   "allowedOrigins": "*",
   "introspectionEnabled": true,
 
@@ -12,7 +12,7 @@
     "port": 5432,
     "dbname": "railway",
     "username": "postgres",
-    "password": "KDvAwQmVItHWUhouSUqBnKZuUjKasWbt",
+    "password": "********",
     "ssl": {
       "rejectUnauthorized": false
     }
@@ -22,7 +22,7 @@
     "host": "redis.railway.internal",
     "port": 6379,
     "username": "default",
-    "password": "lZZCskdRplTNzbcdQZvuCWoGWlskMHXk"
+    "password": "********"
   },
 
   "logLevel": "info"
