@@ -3,7 +3,7 @@ FROM node:22 AS builder
 WORKDIR /app
 COPY . .
 
-ENV VITE_MEDPLUM_BASE_URL= https://medplum-production-4101.up.railway.app
+ENV VITE_MEDPLUM_BASE_URL=https://medplum-production-4101.up.railway.app
 
 RUN npm install --legacy-peer-deps
 RUN npm install -g turbo rimraf
