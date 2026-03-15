@@ -1,9 +1,9 @@
 {
   "port": 3000,
-  "baseUrl": "https://medplum-production-dff0.up.railway.app",
-  "appBaseUrl": "https://medplum-production-dff0.up.railway.app",
+  "baseUrl": "https://medplum-production-af1b.up.railway.app",
+  "appBaseUrl": "https://valiant-joy-production-8f95.up.railway.app",
   "binaryStorage": "file:/app/binary/",
-  "storageBaseUrl": "https://medplum-production-dff0.up.railway.app/storage/",
+  "storageBaseUrl": "https://medplum-production-af1b.up.railway.app/storage/",
   "allowedOrigins": "*",
   "introspectionEnabled": true,
 
